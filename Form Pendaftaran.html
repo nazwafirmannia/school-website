@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <head>
+        <title>Pendaftaran Mahasiswa Baru</title>
+        <link rel="icon" type="image/png" href="img/LOGO_SMA-0000-removebg-preview.png">
+    </head>
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    label {
+        font-weight: bold;
+    }
+
+    body {
+        background-image: url(back.png);
+    }
+</style>
+
+<body>
+
+    <form id="form" action="simpan_data.php" method="POST">
+
+        <center>
+            <img src="img/ppdbfx.png" alt="header" id="responsiveImg">
+        </center>
+        
+        <script>
+            function resizeImage() {
+                const img = document.getElementById('responsiveImg');
+                if (window.innerWidth <= 768) {
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                } else {
+                    img.style.width = '1140px';
+                    img.style.height = '460px';
+                }
+            }
+        
+            // Jalankan saat halaman dimuat
+            window.onload = resizeImage;
+        
+            // Jalankan saat ukuran jendela berubah
+            window.onresize = resizeImage;
+        </script>
+        
+        <!-------------------------------DATA DIRI PESERTA DIDIK -------------------------------->
+        <div style="background-color: rgb(134, 134, 126)" class="container p-3 my-3 border">
+            <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
+                <img src="img/LOGO_SMA-0000-removebg-preview.png" alt="Logo Sekolah" class="logo">
+                <h1 class="text-center">PENERIMAAN PESERTA DIDIK BARU</h1>
+            </div>
+            <form id="form" method="POST">
+                <div class="alert alert-secondary">
+                    <strong>DATA PRIBADI CALON PESERTA DIDIK BARU</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7">
+                    <div class="form-group">
+                        <label>NISN</label>
+                        <input type="text" name="nisn" class="form-control" placeholder="Masukkan NISN ">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Nomor Identitas (NIK) :</label>
+                        <input type="text" name="nik" class="form-control" placeholder="Masukkan Nomor NIK">
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="form-group">
+                        <label>NAMA Sesuai Ijazah</label>
+                        <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama">
+                    </div>
+                </div>
+                
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Nama Panggilan: </label>
+                        <input type="text" name="panggilan" class="form-control" placeholder="Masukkan Nama Panggilan">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Tempat Lahir :</label>
+                        <input type="text" name="tempat_lahir" class="form-control" placeholder="Masukkan Tempat Lahir">
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal Lahir :</label>
+                        <input type="date" name="tanggal_lahir" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Status Pendaftaran :</label>
+                        <select class="form-control" name="status_pendaftaran">
+                            <option>Pilih</option>
+                            <option value="Reguler">Reguler</option>
+                            <option value="Unggul">Unggul</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Jenis Kelamin :</label>
+                        <br>
+                        <input type="radio" name="jenis_kelamin" value="laki-Laki"> Laki-Laki
+                        <br>
+                        <input type="radio" name="jenis_kelamin" value="perempuan"> Perempuan
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Agama :</label>
+                        <select class="form-control" name="agama">
+                            <option>Pilih</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Budha">Budha</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Suku:</label>
+                        <select class="form-control" name="suku">
+                            <option>Pilih</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Jawa">Jawa</option>
+                            <option value="Madura">Madura</option>
+                            <option value="Sunda">Sunda</option>
+                            <option value="Batak">Batak</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Kondisi Ekonomi :</label>
+                        <select class="form-control" name="kondisi_ekonomi">
+                            <option>Pilih</option>
+                            <option value="Tidak Mampu">Tidak Mampu</option>
+                            <option value="Cukup Mampu">Cukup Mampu</option>
+                            <option value="Mampu">Mampu</option>
+                            <option value="Berlebih">Berlebih</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Kewarganegaraan :</label>
+                        <br>
+                        <input type="radio" name="kwn" value="WNI"> Warga Negara Indonesia (WNI)
+                        <br>
+                        <input type="radio" name="kwn" value="WNA"> Warga Negara Asing (WNA)
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Anak Ke </label>
+                        <input type="text" name="anakke" class="form-control" placeholder="Masukkan Bahwa anda anak ke">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Status Anak :</label>
+                        <br>
+                        <input type="radio" name="status_anak" value="Anak kandung"> Anak Kandung
+                        <br>
+                        <input type="radio" name="status_anak" value="Anak Angkat"> Anak Angkat
+                        <br>
+                        <input type="radio" name="status_anak" value="Anak Tiri"> Anak Tiri
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Jumlah Saudara Kandung</label>
+                        <input type="text" name="jumlah_saudara_kandung" class="form-control" placeholder="Masukkan Jumlah Saudara kandung">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Bahasa :</label>
+                        <input type="text" name="bahasa" class="form-control" placeholder="Bahasa yang digunakan">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Alamat Rumah :</label>
+                        <textarea class="form-control" name="alamat_rumah" rows="2" id="alamat"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Jarak Ke Sekolah</label>
+                        <input type="js" name="jaraksekolah" class="form-control" placeholder="Masukkan Jarak Sekoalah">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Telepon Rumah  :</label>
+                        <input type="text" name="no_hp" class="form-control" placeholder="Masukkan Nomor Handphone">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>Email :</label>
+                        <input type="text" name="email" class="form-control" placeholder="Masukkan email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Asal Sekolah</label>
+                        <input type="text" name="asalsekolah" class="form-control" placeholder="Masukkan asal Sekoalah">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>No Ijazah  :</label>
+                        <input type="text" name="no_ijazah" class="form-control" placeholder="Masukkan Nomor Ijazah">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal Ijazah :</label>
+                        <input type="date" name="tanggal_ijazah" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label>No SHUN :</label>
+                        <input type="text" name="no_shun" class="form-control" placeholder="Masukkan Nomor SHUN ">
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal SHUN :</label>
+                        <input type="date" name="tanggal_shun" class="form-control">
+                    </div>
+                </div>                
+            </div>
+            <!-------------------------------DATA DIRI PESERTA DIDIK END -------------------------------->
+            
+            <!-- -----------------------DATA RIWAYAT KESEHATAN ---------------------->
+            <div class="alert alert-secondary">
+                <strong>RIWAYAT KESEHATAN CALON PESERTA DIDIK BARU</strong>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Golongan Darah :</label>
+                        <br>
+                        <input type="radio" name="goldar" value="A"> A
+                        <br>
+                        <input type="radio" name="goldar" value="B"> B
+                        <br>
+                        <input type="radio" name="goldar" value="AB"> AB
+                        <br>
+                        <input type="radio" name="goldar" value="O"> O
+                        <br>
+                        <input type="radio" name="goldar" value="Belum ada data"> belom ada data
+                    </div>
+                </div>
+                
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Berat badan :</label>
+                        <input type="text" name="berat_badan" class="form-control" placeholder="Berat badan Kg">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Tinggi badan :</label>
+                        <input type="text" name="tinggi_badan" class="form-control" placeholder="Tinggi badan Cm">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="form-group">
+                        <label>Riwayat Penyakit :</label>
+                        <input type="text" name="riwayat_penyakit" class="form-control" placeholder="Jika ada">
+                    </div>
+                </div>
+            </div>
+            <!-- -----------------------DATA RIWAYAT KESEHATAN END--------------->
+            
+
+                <!------------------------------ayah END------------------------- -->
+                <div class="alert alert-secondary">
+                    <strong>DATA AYAH PESERTA DIDIK</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Nama Orang Tua :</label>
+                            <input type="text" name="nama_ayah" class="form-control" placeholder="Masukkan Nama orang tua Ayah">
+                        </div>
+                    </div>
+                    
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Status :</label>
+                        <br>
+                        <input type="radio" name="status_ayah" value="ayah angkat"> Ayah angkat
+                        <br>
+                        <input type="radio" name="status_ayah" value="ayah kandung"> Ayah kandung
+                        <br>
+                        <input type="radio" name="status_ayah" value="ayah tiri"> Ayah tiri
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tempat lahir :</label>
+                        <input type="text" name="tempat_lahir_ayah" class="form-control" placeholder="Tempat Lahir Ayah">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal Lahir :</label>
+                        <input type="date" name="tanggal_lahir_ayah" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Pendidikan:</label>
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="SD"> SD
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="SMP"> SMP
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="SMA/SLTA"> SMA / SLTA
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="D1"> D1
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="D2"> D2
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="D3"> D3
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="S1"> S1
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="S2"> S2
+                        <br>
+                        <input type="radio" name="pendidikan_ayah" value="S3"> S3
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Pekerjaan :</label>
+                        <select class="form-control" name="pekerjaan_ayah">
+                            <option>Pilih</option>
+                            <option value="PETANI">PETANI</option>
+                            <option value="PETERNAK">PETERNAK</option>
+                            <option value="PNS - TNI - POLRI">PNS - TNI - POLRI</option>
+                            <option value="Karyawan Swasta">Karyawan Swasta</option>
+                            <option value="Pedagang">Pedagang</option>
+                            <option value="Wiraswasta">Wiraswasta</option>
+                            <option value="Buruh">Buruh</option>
+                            <option value="Pensiunan">Pensiunan</option>
+                            <option value="Tidak bekerja">Tidak Bekerja</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Penghasilan Orangtua :</label>
+                        <select class="form-control" name="penghasilan_ayah">
+                            <option>Pilih</option>
+                            <option value="Kurang dari Rp.499.999">Kurang dari Rp.499.999</option>
+                            <option value="Rp.500.000 - Rp.999.999">Rp.500.000 - Rp.999.999</option>
+                            <option value="Rp.1.000.000 - Rp.1.999.999">Rp.1.000.000 - Rp.1.999.999</option>
+                            <option value="Rp.2.000.000 - Rp.3.999.999">Rp.2.000.000 - Rp.3.999.999</option>
+                            <option value="Rp.4.000.000 - Rp.9.999.999">Rp.4.000.000 - Rp.9.999.999</option>
+                            <option value="Lebih besar dari Rp.10.000.000">Lebih besar dari Rp.10.000.000</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Email Orangtua :</label>
+                        <input type="text" name="email_ayah" class="form-control" placeholder="Email ayah">
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Nama Wali :</label>
+                        <input type="text" name="nama_wali_ayah" class="form-control"
+                        placeholder="nama Wali">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Alamat Orangtua :</label>
+                        <textarea class="form-control" name="alamat_ayah" rows="2" id="alamat"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>HP Orangtua (untuk SMS getway) :</label>
+                        <input type="text" name="no_hp_ayah" class="form-control"
+                        placeholder="no hp">
+                    </div>
+                </div>
+            </div>
+            <!------------------------------AYAH END------------------------- -->
+            
+
+            <!----------------------------------- IBU.............................................. -->
+            <div class="alert alert-secondary bg-white">
+                <strong>DATA IBU PESERTA DIDIK</strong>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Nama Orang Tua :</label>
+                        <input type="text" name="nama_ibu" class="form-control" placeholder="Masukkan Nama orang tua Ibu">
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Status :</label>
+                        <br>
+                        <input type="radio" name="status_ibu" value="ibu angkat"> Ibu angkat
+                        <br>
+                        <input type="radio" name="status_ibu" value="ibu kandung"> Ibu kandung
+                        <br>
+                        <input type="radio" name="status_ibu" value="ibu tiri"> Ibu tiri
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tempat lahir :</label>
+                        <input type="text" name="tempat_lahir_ibu" class="form-control" placeholder="Tempat Lahir Ibu">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal Lahir :</label>
+                        <input type="date" name="tanggal_lahir_ibu" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Pendidikan:</label>
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="SD"> SD
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="SMP"> SMP
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="SMA/SLTA"> SMA / SLTA
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="D1"> D1
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="D2"> D2
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="D3"> D3
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="S1"> S1
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="S2"> S2
+                        <br>
+                        <input type="radio" name="pendidikan_ibu" value="S3"> S3
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Pekerjaan :</label>
+                        <select class="form-control" name="pekerjaan_ibu">
+                            <option>Pilih</option>
+                            <option value="PETANI">PETANI</option>
+                            <option value="PNS">PETERNAK</option>
+                            <option value="PNS - TNI - POLRI">PNS - TNI - POLRI</option>
+                            <option value="Karyawan Swasta">Karyawan Swasta</option>
+                            <option value="Pedagang">Pedagang</option>
+                            <option value="Wiraswasta">Wiraswasta</option>
+                            <option value="Buruh">Buruh</option>
+                            <option value="Pensiunan">Pensiunan</option>
+                            <option value="Tidak bekerja">Tidak Bekerja</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Penghasilan Orangtua :</label>
+                        <select class="form-control" name="penghasilan_ibu">
+                            <option>Pilih</option>
+                            <option value="Kurang dari Rp.499.999">Kurang dari Rp.499.999</option>
+                            <option value="Rp.500.000 - Rp.999.999">Rp.500.000 - Rp.999.999</option>
+                            <option value="Rp.1.000.000 - Rp.1.999.999">Rp.1.000.000 - Rp.1.999.999</option>
+                            <option value="Rp.2.000.000 - Rp.3.999.999">Rp.2.000.000 - Rp.3.999.999</option>
+                            <option value="Rp.4.000.000 - Rp.9.999.999">Rp.4.000.000 - Rp.9.999.999</option>
+                            <option value="Lebih besar dari Rp.10.000.000">Lebih besar dari Rp.10.000.000</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Email Orangtua :</label>
+                        <input type="text" name="email_ibu" class="form-control" placeholder="Email Ibu">
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Nama Wali :</label>
+                        <input type="text" name="nama_wali_ibu" class="form-control"
+                        placeholder="nama Wali">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Alamat Orangtua :</label>
+                        <textarea class="form-control" name="alamat_ibu" rows="2" id="alamat"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>HP Orangtua (untuk SMS getway) :</label>
+                        <input type="text" name="no_hp_ibu" class="form-control"
+                        placeholder="no hp">
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------- IBU EDN.............................................. -->
+            
+                <!-- TAMBAHAN INFORMASI  -->
+                <div class="alert alert-secondary">
+                    <strong>INFORMASI TAMBAHAN</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Hobby:</label>
+                            <input type="text" name="hobby" class="form-control" placeholder="Masukkan hobby anda">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Perstasi yang di capai:</label>
+                            <input type="text" name="prestasi" class="form-control" placeholder="Prestasi anda">
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <!-- TAMBAHAN INFORMASI END -->
+
+
+
+
+
+
+                <!-- pilihan peminatan -->
+                <div class="alert alert-secondary">
+                    <strong>PILIHAN PEMINATAN</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Pilih Jurusan:</label>
+                            <select class="form-control" name="prog1">
+                                <option>Pilih</option>
+                            <option value="umum">Umum</option>
+                            <option value="umum+perhotelan">Umum + Perhotelan</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="tanda-tangan">
+                <div class="kolom">
+                    <label>Tanda Tangan Orang Tua/Wali:</label>
+                    <br><br><br><br>
+                    <span>(__________________)</span>
+                </div>
+                <div class="kolom">
+                    <label>Tanda Tangan Calon Peserta Didik:</label>
+                    <br><br><br><br>
+                    <span>(__________________)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success">
+            <strong>
+                <input type="checkbox" name="pernyataan1" value="pernyataan1">
+                Saya menyatakan bahwa data yang Saya isikan diatas sudah benar.
+                <br>
+                <input type="checkbox" name="pernyataan2" value="pernyataan2">
+                Saya bersedia menerima sanksi pembatalan penerimaan di Program Studi yang Saya pilih apabila Saya
+                melanggar pernyataan ini.
+            </strong>
+        </div>
+        <!-- pilihan peminatan end -->
+        
+        <center>
+            
+            <button onclick="printPage()" class="btn btn-success">daftar dan Cetak pdf </button>
+            <button type="button" onclick="printPage()" class="btn btn-success">Cetak Saja</button>
+            <button type="reset" name="reset" class="btn btn-secondary">Reset</button>
+        </center>
+            
+        <form id="form" action="simpan_data.php" method="POST"></form>
+    
+        <!-- Footer -->
+        <center>
+            <div style="background-color: black;" class="container p-3 my-3 border">
+                <h5 style="color: white;" class="text-center"> <a href=" ">Sagita Pra Kosa</a> And <a href="">Baitul Nazwa</a>  &#169; 2024 Powered by
+                    Visual Studio Code</h5>
+            </div>
+        </center>
+    
+        <style>
+            /* Sembunyikan elemen dengan class "no-print" saat mencetak */
+            @media print {
+                .no-print {
+                    display: none;
+                }
+            }
+        </style>
+        
+        <!-- scrip alert -->
+
+        
+        <!-- Script Print Page -->
+        <script type="text/javascript">
+            function printPage() {
+                window.print();
+            }
+        </script>
+<!-- ini yang hampir -->
+
+
+
+
+    
+
+</body>
+
+</html>

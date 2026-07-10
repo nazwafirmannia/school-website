@@ -1,0 +1,108 @@
+.responsive-img {
+    width: 100%; /* Gambar akan menyesuaikan lebar kontainer */
+    max-width: 1140px; /* Lebar maksimal gambar */
+    height: auto; /* Menjaga rasio aspek gambar */
+    border-radius: 8px; /* Menambahkan sedikit lengkungan pada sudut gambar, opsional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan bayangan untuk estetika */
+}
+
+
+.tanda-tangan {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #000;
+}
+
+.kolom {
+    text-align: center;
+    width: 45%;
+}
+
+.logo {
+    width: 50px; /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-right: 10px; /* Jarak antara logo dan teks */
+}
+
+/* Style dasar untuk form */
+
+/* Style untuk judul form section */
+.form-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+/* Style untuk label dan input */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style untuk select option */
+select {
+    background-color: #fff;
+    color: #333;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Style untuk form container */
+div {
+    margin-bottom: 15px;
+}
+
+/* Tombol Submit */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Media query untuk tampilan responsif */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    .form-section h3 {
+        font-size: 1.1em;
+    }
+}
